@@ -1,0 +1,11 @@
+{
+  "title": "الق نظرة على منتجاتنا",
+  "items": [
+    {
+      "title": "بوكسات واكياس",
+      "price": "$10.00",
+      "image": "/images/products/boxes-bags.webp",
+      "cta": "اشتري الآن"
+    }
+  ]
+}
