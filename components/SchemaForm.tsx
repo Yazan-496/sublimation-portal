@@ -5,6 +5,7 @@ import { Save, Loader2, Plus, Trash2, Image as ImageIcon, Edit2, ChevronDown, Ch
 import Image from 'next/image';
 import { saveJsonFile } from '@/app/actions';
 import ImagePicker from './ImagePicker';
+import LoadingOverlay from './LoadingOverlay';
 import clsx from 'clsx';
 
 interface SchemaFormProps {
