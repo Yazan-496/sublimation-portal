@@ -40,7 +40,7 @@ export async function uploadImageAction(formData: FormData) {
 export async function deleteFileAction(path: string, sha: string) {
   try {
     await deleteFile(path, sha, `Delete ${path} via Dashboard`);
-    revalidatePath('/dashboard/images');
+    revalidatePath('/images');
     return { success: true };
   } catch (error: any) {
     return { success: false, error: error.message };

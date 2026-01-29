@@ -37,14 +37,14 @@ export default function JsonEditor({ initialContent, path, sha }: JsonEditorProp
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-            <h2 className="text-xl font-bold text-gray-800">Editing: <span className="text-blue-600 font-mono text-base">{path}</span></h2>
+            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">Editing: <span className="text-blue-600 dark:text-blue-400 font-mono text-base">{path}</span></h2>
         </div>
         <button
           onClick={handleSave}
           disabled={isSaving}
           className={clsx(
             "flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all",
-            isSaving ? "bg-blue-300 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700 text-white"
+            isSaving ? "bg-blue-300 dark:bg-blue-900 cursor-not-allowed text-white" : "bg-blue-600 hover:bg-blue-700 text-white"
           )}
         >
           {isSaving ? <Loader2 className="animate-spin" size={20} /> : <Save size={20} />}
@@ -55,18 +55,18 @@ export default function JsonEditor({ initialContent, path, sha }: JsonEditorProp
       {message && (
         <div className={clsx(
           "p-4 rounded-lg flex items-center gap-2",
-          message.type === 'success' ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"
+          message.type === 'success' ? "bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300" : "bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300"
         )}>
           {message.type === 'success' ? <CheckCircle size={20} /> : <AlertTriangle size={20} />}
           {message.text}
         </div>
       )}
 
-      <div className="border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+      <div className="border border-gray-300 dark:border-zinc-700 rounded-lg overflow-hidden shadow-sm">
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full h-[600px] p-4 font-mono text-sm bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"
+          className="w-full h-[600px] p-4 font-mono text-sm bg-gray-50 dark:bg-zinc-900 text-gray-900 dark:text-gray-100 focus:bg-white dark:focus:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"
           spellCheck={false}
         />
       </div>

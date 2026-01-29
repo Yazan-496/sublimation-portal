@@ -23,13 +23,13 @@ export default async function ImagesPage({ searchParams }: PageProps) {
 
     return (
       <div>
-         <h1 className="text-2xl font-bold mb-6">Media Library</h1>
+         <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">مكتبة الصور</h1>
          <ImageGallery items={sortedItems as any} currentPath={currentPath} />
       </div>
     );
   } catch (error) {
     return (
-      <div className="p-4 bg-red-50 text-red-700 rounded-lg flex items-center gap-2">
+      <div className="p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 rounded-lg flex items-center gap-2 border border-red-200 dark:border-red-900/30">
         <AlertCircle size={20} />
         <div>
           <p className="font-bold">Error loading images</p>
